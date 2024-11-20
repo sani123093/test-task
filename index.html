@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Талица управлеия просмотра пользователя</title>
+</head>
+<body>
+    <style>
+        
+    </style>
+    <div class="container">
+        <div class="control-panel">
+            
+    <div class="serch__wrapper">
+        <input type="text" id="input-search" placeholder="Поиск по имени или дате рождения">
+    </div>
+    <div class="users" id="usersCounter">
+        <p>users: <span id="userCount">0</span></p>
+    </div>
+    <div class="button_wrapper">
+        <div class="sorting_wrapper">
+            <select id="sortingSelect" class="sorting-burger burger">
+                <option value="id"> по ID</option>
+                <option value="name"> по name</option>
+                <option value="birth"> по birth</option>
+                <option value="active"> по active</option>
+            </select>
+            <button id="ascSortingBtn">asc</button>
+            <button id="descSortingBtn">desc</button>
+            
+        </div>
+    <button id="addUserBtn" class="btn-modal">ADD</button>
+</div>
+</div>
+<div class="overlay" id="overlay"></div>
+    <div class="modal" id="userModal">
+        <h2 id="modalTitle">Add a user</h2>
+        <input type="text" id="name" placeholder="name">
+        <input type="date" id="birth" placeholder="birth">
+        <label class="modal__label">
+            active:
+            <input type="checkbox" id="active">
+        </label>
+        <button id="saveUserBtn">save</button>
+        <button id="closeModalBtn">close</button>
+    </div>
+    
+    <table class="table" id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>birth</th>
+                <th class="wrapper_active"> active
+                    <buttn id="colorBtn" class="button-active">
+                        active 
+                        <div class="lamp gray"></div>
+                        <div class="lamp red none"></div>
+                        <div class="lamp grin none"></div>
+                    </button>
+                </th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
+    <div class="bottom">
+    <div class="btn-pogination">
+    </div>
+    <select name="sorting" id="pageSelect"></select>
+</div>
+</div>
+
+<script src="js/main.js">
+</script>
+</body>
+</html>
